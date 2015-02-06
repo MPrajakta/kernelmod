@@ -1,0 +1,23 @@
+run the following command:
+	make
+this generates a .ko file. my-module.ko(or filename.ko) along with a bunch of other files.
+
+run the following command:
+	sudo insmod my-module.ko
+this command loads the module in the kernel
+
+to verify the same, run the following command:
+	lsmod
+also run the following command:
+	dmesg
+or
+	dmesg | grep "LOADING"
+
+unload the module by running
+	sudo rmmod my-module
+verify the same with the following command:
+	lsmod
+verify the message printed with:
+	dmesg
+
+Note: printk() is used to print the messages instead of printf().
